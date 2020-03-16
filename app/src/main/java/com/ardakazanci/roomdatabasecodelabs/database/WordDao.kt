@@ -19,7 +19,7 @@ interface WordDao {
     suspend fun insert(word: Word)
     // word_table tablosunu temizler.
     @Query("DELETE FROM word_table")
-    suspend fun deleted()
+    suspend fun deleteAll()
 
 
 }
