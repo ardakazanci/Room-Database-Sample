@@ -1,5 +1,6 @@
 package com.ardakazanci.roomdatabasecodelabs.database
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -10,7 +11,7 @@ interface WordDao {
 
     // Alfabetik Sıralama işlemi
     @Query("SELECT * FROM word_table ORDER BY word ASC")
-    fun getAlphabetizedWords(): List<Word>
+    fun getAlphabetizedWords(): LiveData<List<Word>>
 
     // 1 Adet Word nesnesinin eklenmesi
     // onConflict : Çatışma stratejisi.
